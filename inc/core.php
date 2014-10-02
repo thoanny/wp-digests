@@ -1,6 +1,6 @@
 <?php
 
-class Plugin_Name {
+class WP_Digests {
 
 	protected $loader;
 	protected $WP_Digests;
