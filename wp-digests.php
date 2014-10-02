@@ -22,3 +22,13 @@ require_once plugin_dir_path( __FILE__ ) . 'inc/deactivation.php';
 
 register_activation_hook( __FILE__, array( 'WP_Digests_Activation', 'activate' ) );
 register_deactivation_hook( __FILE__, array( 'WP_Digests_Deactivation', 'deactivate' ) );
+
+require_once plugin_dir_path( __FILE__ ) . 'inc/core.php';
+
+function run_WP_Digests() {
+
+	$plugin = new WP_Digests();
+	$plugin->run();
+
+}
+run_WP_Digests();
