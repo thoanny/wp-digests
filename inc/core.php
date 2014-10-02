@@ -25,7 +25,7 @@ class WP_Digests {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'inc/admin.class.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'inc/public.class.php';
 
-		$this->loader = new Plugin_Name_Loader();
+		$this->loader = new WP_Digests_Loader();
 
 	}
 
