@@ -60,5 +60,21 @@ class WP_Digests_Admin {
 		register_post_type( 'digest', $args );
 		
 	}
+	
+	public function custom_post_type_metaboxes() {
+		add_meta_box('id_ma_meta', 'Ma metabox', 'WP_Digests_Admin::custom_post_type_metaboxes_content', 'digest', 'normal', 'core');
+	}
+	
+	public function custom_post_type_metaboxes_content($d){
+		$val = get_post_meta($d->ID,'_ma_valeur',true);
+		echo '<label for="mon_champ">Mon champ : </label>';
+		echo '<input id="mon_champ" type="text" name="mon_champ" value="'.$val.'" />';
+	}
+	
+	public function save_custom_post_type_metaboxes($post_ID){
+		if(isset($_POST['mon_champ'])){
+			update_post_meta($post_ID,'_ma_valeur', esc_html($_POST['mon_champ']));
+		}
+	}
 
 }
