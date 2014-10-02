@@ -19,3 +19,6 @@ if ( ! defined( 'WPINC' ) ) {
 
 require_once plugin_dir_path( __FILE__ ) . 'inc/activation.php';
 require_once plugin_dir_path( __FILE__ ) . 'inc/deactivation.php';
+
+register_activation_hook( __FILE__, array( 'WP_Digests_Activation', 'activate' ) );
+register_deactivation_hook( __FILE__, array( 'WP_Digests_Deactivation', 'deactivate' ) );
