@@ -1,6 +1,6 @@
 <?php
 
-class Plugin_Name_Admin {
+class WP_Digests_Admin {
 
 	private $name;
 	private $version;
