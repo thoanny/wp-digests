@@ -57,7 +57,7 @@ class WP_Digests_Admin {
 			'publicly_queryable'  => true,
 			'capability_type'     => 'post',
 		);
-		register_post_type( 'digests', $args );
+		register_post_type( 'digest', $args );
 		
 	}
 
