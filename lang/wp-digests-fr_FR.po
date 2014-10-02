@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digests\n"
 "POT-Creation-Date: 2014-10-02 17:46+0100\n"
-"PO-Revision-Date: 2014-10-02 17:48+0100\n"
+"PO-Revision-Date: 2014-10-02 17:52+0100\n"
 "Last-Translator: Anthony Destenay <anthony.destenay@gmail.com>\n"
 "Language-Team: Anthony Destenay <anthony.destenay@gmail.com>\n"
 "Language: fr_FR\n"
@@ -30,44 +30,44 @@ msgstr ""
 
 #: inc/admin.class.php:32
 msgid "Digests"
-msgstr ""
+msgstr "Résumés"
 
 #: inc/admin.class.php:33
 msgid "Parent:"
-msgstr ""
+msgstr "Parent :"
 
 #: inc/admin.class.php:34
 msgid "All Digests"
-msgstr ""
+msgstr "Tous les résumés"
 
 #: inc/admin.class.php:35
 msgid "View Digest"
-msgstr ""
+msgstr "Afficher le résumé"
 
 #: inc/admin.class.php:36
 msgid "Add New Digest"
-msgstr ""
+msgstr "Ajouter un résumé"
 
 #: inc/admin.class.php:37
 msgid "Add New"
-msgstr ""
+msgstr "Ajouter"
 
 #: inc/admin.class.php:38
 msgid "Edit Digest"
-msgstr ""
+msgstr "Modifier le résumé"
 
 #: inc/admin.class.php:39
 msgid "Update Digest"
-msgstr ""
+msgstr "Mettre à jour le résumé"
 
 #: inc/admin.class.php:40
 msgid "Search Digest"
-msgstr ""
+msgstr "Chercher"
 
 #: inc/admin.class.php:41
 msgid "Not found"
-msgstr ""
+msgstr "Aucun résultat"
 
 #: inc/admin.class.php:42
 msgid "Not found in Trash"
-msgstr ""
+msgstr "Aucun résultat dans la Corbeille."
