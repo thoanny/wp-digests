@@ -12,3 +12,7 @@
  * Text Domain:		wp-digests
  * Domain Path:		/lang
  */
+
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
