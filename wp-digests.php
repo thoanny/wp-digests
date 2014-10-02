@@ -16,3 +16,6 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+
+require_once plugin_dir_path( __FILE__ ) . 'inc/activation.php';
+require_once plugin_dir_path( __FILE__ ) . 'inc/deactivation.php';
