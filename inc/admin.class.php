@@ -27,19 +27,19 @@ class WP_Digests_Admin {
 	public function custom_post_type() {
 	
 		$labels = array(
-			'name'                => _x( 'Digests', 'Post Type General Name', 'digests' ),
-			'singular_name'       => _x( 'Digest', 'Post Type Singular Name', 'digests' ),
-			'menu_name'           => __( 'Digests', 'digests' ),
-			'parent_item_colon'   => __( 'Parent:', 'digests' ),
-			'all_items'           => __( 'All Digests', 'digests' ),
-			'view_item'           => __( 'View Digest', 'digests' ),
-			'add_new_item'        => __( 'Add New Digest', 'digests' ),
-			'add_new'             => __( 'Add New', 'digests' ),
-			'edit_item'           => __( 'Edit Digest', 'digests' ),
-			'update_item'         => __( 'Update Digest', 'digests' ),
-			'search_items'        => __( 'Search Digest', 'digests' ),
-			'not_found'           => __( 'Not found', 'digests' ),
-			'not_found_in_trash'  => __( 'Not found in Trash', 'digests' ),
+			'name'                => _x( 'Digests', 'Post Type General Name', 'wp-digests' ),
+			'singular_name'       => _x( 'Digest', 'Post Type Singular Name', 'wp-digests' ),
+			'menu_name'           => __( 'Digests', 'wp-digests' ),
+			'parent_item_colon'   => __( 'Parent:', 'wp-digests' ),
+			'all_items'           => __( 'All Digests', 'wp-digests' ),
+			'view_item'           => __( 'View Digest', 'wp-digests' ),
+			'add_new_item'        => __( 'Add New Digest', 'wp-digests' ),
+			'add_new'             => __( 'Add New', 'wp-digests' ),
+			'edit_item'           => __( 'Edit Digest', 'wp-digests' ),
+			'update_item'         => __( 'Update Digest', 'wp-digests' ),
+			'search_items'        => __( 'Search Digest', 'wp-digests' ),
+			'not_found'           => __( 'Not found', 'wp-digests' ),
+			'not_found_in_trash'  => __( 'Not found in Trash', 'wp-digests' ),
 		);
 		$args = array(
 			'labels'              => $labels,
