@@ -1,0 +1,73 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Digests\n"
+"POT-Creation-Date: 2014-10-02 17:46+0100\n"
+"PO-Revision-Date: 2014-10-02 17:48+0100\n"
+"Last-Translator: Anthony Destenay <anthony.destenay@gmail.com>\n"
+"Language-Team: Anthony Destenay <anthony.destenay@gmail.com>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: inc/admin.class.php:30
+msgctxt "Post Type General Name"
+msgid "Digests"
+msgstr ""
+
+#: inc/admin.class.php:31
+msgctxt "Post Type Singular Name"
+msgid "Digest"
+msgstr ""
+
+#: inc/admin.class.php:32
+msgid "Digests"
+msgstr ""
+
+#: inc/admin.class.php:33
+msgid "Parent:"
+msgstr ""
+
+#: inc/admin.class.php:34
+msgid "All Digests"
+msgstr ""
+
+#: inc/admin.class.php:35
+msgid "View Digest"
+msgstr ""
+
+#: inc/admin.class.php:36
+msgid "Add New Digest"
+msgstr ""
+
+#: inc/admin.class.php:37
+msgid "Add New"
+msgstr ""
+
+#: inc/admin.class.php:38
+msgid "Edit Digest"
+msgstr ""
+
+#: inc/admin.class.php:39
+msgid "Update Digest"
+msgstr ""
+
+#: inc/admin.class.php:40
+msgid "Search Digest"
+msgstr ""
+
+#: inc/admin.class.php:41
+msgid "Not found"
+msgstr ""
+
+#: inc/admin.class.php:42
+msgid "Not found in Trash"
+msgstr ""
