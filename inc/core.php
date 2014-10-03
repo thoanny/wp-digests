@@ -56,6 +56,7 @@ class WP_Digests {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		$this->loader->add_filter( 'template_include', $plugin_public, 'custom_post_type_template', 1 );
 
 	}
 
