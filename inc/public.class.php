@@ -28,12 +28,16 @@ class WP_Digests_Public {
 		
 		if ( get_post_type() == 'digest' ) {
 			if ( is_single() ) {
-				// checks if the file exists in the theme first,
-				// otherwise serve the file from the plugin
 				if ( $theme_file = locate_template( array ( 'single-digest.php' ) ) ) {
 					$template_path = $theme_file;
 				} else {
 					$template_path = plugin_dir_path( __FILE__ ) . 'tpl/single-digest.php';
+				}
+			} elseif( is_archive() ) {
+				if ( $theme_file = locate_template( array ( 'archive-digest.php' ) ) ) {
+					$template_path = $theme_file;
+				} else {
+					$template_path = plugin_dir_path( __FILE__ ) . 'tpl/archive-digest.php';
 				}
 			}
 		}
