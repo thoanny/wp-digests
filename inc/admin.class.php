@@ -56,6 +56,7 @@ class WP_Digests_Admin {
 			'exclude_from_search' => false,
 			'publicly_queryable'  => true,
 			'capability_type'     => 'post',
+			'rewrite'			  => array('slug' => 'digests'),
 		);
 		register_post_type( 'digest', $args );
 		
