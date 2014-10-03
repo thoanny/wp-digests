@@ -18,7 +18,6 @@ get_header(); ?>
 					<header class="entry-header">
 						<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 					</header>
-					<div class="entry-content"><?php the_content(); ?></div>
 					<?php
 						// echo esc_html( get_post_meta( get_the_ID(), '_digest_tag_name', true ) );
 					?>
