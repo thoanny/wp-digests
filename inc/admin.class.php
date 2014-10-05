@@ -67,14 +67,45 @@ class WP_Digests_Admin {
 		add_meta_box('digest_items', __('Liens/Objets/...'), 'WP_Digests_Admin::custom_post_type_metaboxes_content', 'digest', 'normal', 'core');
 	}
 	
-	public function custom_post_type_metaboxes_content($d){
+	public function custom_post_type_metaboxes_content(){
+		/*new*/
+		global $post;
+		$repeatable_fields = get_post_meta($post->ID, 'repeatable_fields', true);
+		/*new*/
 		include_once( plugin_dir_path( __FILE__ ) . 'tpl/metabox-digest.php' );
 	}
 	
-	public function save_custom_post_type_metaboxes($post_ID){
-		if(isset($_POST['mon_champ'])){
-			update_post_meta($post_ID,'_ma_valeur', esc_html($_POST['mon_champ']));
+	public function save_custom_post_type_metaboxes($post_id){
+		// src: https://gist.github.com/helenhousandi/1593065/download#
+		
+		$old = get_post_meta($post_id, 'repeatable_fields', true);
+		$new = array();
+		
+		$thumbnails = $_POST['thumbnail'];
+		$provider_names = $_POST['provider_name'];
+		$provider_urls = $_POST['provider_url'];
+		$types = $_POST['type'];
+		$urls = $_POST['url'];
+		$titles = $_POST['title'];
+		$comments = $_POST['comment'];
+		$count = count( $titles );
+		
+		for ( $i = 0; $i < $count; $i++ ) {
+			if ( $titles[$i] != '' ) :
+				$new[$i]['title'] = stripslashes( strip_tags( $titles[$i] ) );
+				$new[$i]['url'] = stripslashes( $urls[$i] );
+				$new[$i]['thumbnail'] = stripslashes( $thumbnails[$i] );
+				$new[$i]['provider_name'] = stripslashes( strip_tags( $provider_names[$i] ) );
+				$new[$i]['provider_url'] = stripslashes( $provider_urls[$i] );
+				$new[$i]['type'] = stripslashes( strip_tags( $types[$i] ) );
+				$new[$i]['comment'] = stripslashes( strip_tags( $comments[$i] ) );
+			endif;
 		}
+		 
+		if ( !empty( $new ) && $new != $old )
+			update_post_meta( $post_id, 'repeatable_fields', $new );
+		elseif ( empty($new) && $old )
+			delete_post_meta( $post_id, 'repeatable_fields', $old );
 	}
 	
 	public function extract_data() {
