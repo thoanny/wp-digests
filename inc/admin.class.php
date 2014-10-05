@@ -68,17 +68,25 @@ class WP_Digests_Admin {
 	}
 	
 	public function custom_post_type_metaboxes_content(){
-		/*new*/
 		global $post;
-		$repeatable_fields = get_post_meta($post->ID, 'repeatable_fields', true);
-		/*new*/
+		$digest_items = get_post_meta($post->ID, 'digest_items', true);
+		
+		wp_nonce_field( 'custom_post_type_metaboxes_nonce', 'custom_post_type_metaboxes_nonce' );
+
 		include_once( plugin_dir_path( __FILE__ ) . 'tpl/metabox-digest.php' );
 	}
 	
 	public function save_custom_post_type_metaboxes($post_id){
 		// src: https://gist.github.com/helenhousandi/1593065/download#
 		
-		$old = get_post_meta($post_id, 'repeatable_fields', true);
+		if ( ! isset( $_POST['custom_post_type_metaboxes_nonce'] ) || ! wp_verify_nonce( $_POST['custom_post_type_metaboxes_nonce'], 'custom_post_type_metaboxes_nonce' ) )
+			return;
+		if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+			return;
+		if (!current_user_can('edit_post', $post_id))
+			return;
+		
+		$old = get_post_meta($post_id, 'digest_items', true);
 		$new = array();
 		
 		$thumbnails = $_POST['thumbnail'];
@@ -88,6 +96,7 @@ class WP_Digests_Admin {
 		$urls = $_POST['url'];
 		$titles = $_POST['title'];
 		$comments = $_POST['comment'];
+		$descriptions = $_POST['description'];
 		$count = count( $titles );
 		
 		for ( $i = 0; $i < $count; $i++ ) {
@@ -98,14 +107,15 @@ class WP_Digests_Admin {
 				$new[$i]['provider_name'] = stripslashes( strip_tags( $provider_names[$i] ) );
 				$new[$i]['provider_url'] = stripslashes( $provider_urls[$i] );
 				$new[$i]['type'] = stripslashes( strip_tags( $types[$i] ) );
+				$new[$i]['description'] = stripslashes( strip_tags( $descriptions[$i] ) );
 				$new[$i]['comment'] = stripslashes( strip_tags( $comments[$i] ) );
 			endif;
 		}
 		 
 		if ( !empty( $new ) && $new != $old )
-			update_post_meta( $post_id, 'repeatable_fields', $new );
+			update_post_meta( $post_id, 'digest_items', $new );
 		elseif ( empty($new) && $old )
-			delete_post_meta( $post_id, 'repeatable_fields', $old );
+			delete_post_meta( $post_id, 'digest_items', $old );
 	}
 	
 	public function extract_data() {
