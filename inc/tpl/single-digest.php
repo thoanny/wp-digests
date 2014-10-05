@@ -3,6 +3,8 @@
  *	Template Name: Single
  */
  
+
+ 
 get_header(); ?>
 <div id="main-content" class="main-content">
 	<div id="primary" class="content-area">
@@ -15,7 +17,11 @@ get_header(); ?>
 					</header>
 					<div class="entry-content"><?php the_content(); ?></div>
 					<?php
-						// echo esc_html( get_post_meta( get_the_ID(), '_digest_tag_name', true ) );
+						$digest_items = get_post_meta( get_the_ID(), 'digest_items', true );
+						if(isset($digest_items) and !empty($digest_items))
+							foreach($digest_items as $item):
+								echo WP_Digests::Markdown($item['comment']);
+							endforeach;
 					?>
 				</article>
 			<?php endwhile; ?>

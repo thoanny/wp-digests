@@ -76,5 +76,13 @@ class WP_Digests {
 	public function get_version() {
 		return $this->version;
 	}
+	
+	public function Markdown($text) {
+		include_once( plugin_dir_path( __FILE__ ) . '../lib/Parsedown/Parsedown.php' );
+		$Parsedown = new Parsedown();
+		
+		return $Parsedown->setBreaksEnabled(true)->text($text);
+		
+	}
 
 }
