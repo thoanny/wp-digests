@@ -9,8 +9,7 @@ get_header(); ?>
 <div id="main-content" class="main-content">
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-			<?php $digests = array( 'post_type' => 'digest' ); $loop = new WP_Query( $digests ); ?>
-			<?php while ( $loop->have_posts() ) : $loop->the_post();?>
+			<?php while ( have_posts() ) : the_post(); ?>
 				<article id="digest-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header class="entry-header">
 						<h1 class="entry-title"><?php the_title(); ?></h1>

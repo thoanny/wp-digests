@@ -12,8 +12,7 @@ get_header(); ?>
 				<h1 class="page-title"><?php echo __('Digests', 'wp-digests'); ?></h1>
 			</div>
 		
-			<?php $digests = array( 'post_type' => 'digest' ); $loop = new WP_Query( $digests ); ?>
-			<?php while ( $loop->have_posts() ) : $loop->the_post();?>
+			<?php while ( have_posts() ) : the_post(); ?>
 				<article id="digest-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header class="entry-header">
 						<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
