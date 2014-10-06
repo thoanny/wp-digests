@@ -48,6 +48,8 @@ class WP_Digests {
 		$this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'custom_post_type_metaboxes' );
 		$this->loader->add_action( 'save_post', $plugin_admin, 'save_custom_post_type_metaboxes' );
 		$this->loader->add_action( 'wp_ajax_extract_data', $plugin_admin, 'extract_data' );
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'register_settings' );
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'register_options_page' );
 
 	}
 

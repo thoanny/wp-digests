@@ -24,6 +24,20 @@ class WP_Digests_Admin {
 
 	}
 	
+	public function register_settings(){
+		add_option( 'wp_digests_embedly_api_key', '');
+		register_setting( 'default', 'wp_digests_embedly_api_key' );
+	}
+	
+	public function register_options_page(){
+		add_options_page( __('Options des résumés', 'wp-digests'), __('Digests', 'wp-digests'), 'manage_options', 'wp-digests-options', 'WP_Digests_Admin::options_page');
+	}
+	
+	public function options_page(){
+		// http://blog.wphub.com/creating-simple-options-page/
+		include_once( plugin_dir_path( __FILE__ ) . 'tpl/options.php' );
+	}
+	
 	public function custom_post_type() {
 	
 		$labels = array(
