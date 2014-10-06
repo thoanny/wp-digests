@@ -8,8 +8,11 @@
 			
 			var item_url = encodeURIComponent($('#digest_items input#item-url').val());
 			
-			if(item_url == '')
+			if(item_url == '') {
+				$(this).next( '.error-txt' ).text( $(this).data('error-empty') ).parent().addClass('error');
+				// $('#digest_items .errors .empty-url').show();
 				return false;
+			}
 				
 			var data = {
 				'action': 'extract_data',
@@ -20,7 +23,7 @@
 				console.log(response);
 			});
 			
-		});
+		}); 
 	
 	});
 

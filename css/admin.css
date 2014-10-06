@@ -1,0 +1,26 @@
+
+#digest_items.postbox .inside #digest-add-item-form {
+	padding:.5em 0 1em;
+}
+
+#digest_items.postbox .inside #digest-add-item-form label {
+	float:left;
+	display:block;
+	padding:5px 0 5px;
+	margin-right:10px;
+	font-weight:bold;
+}
+
+#digest_items.postbox .inside #digest-add-item-form.error label {
+	margin-left:10px;
+	color:#dd3d36;
+}
+
+#digest_items.postbox .inside #digest-add-item-form.error input {
+	border-color:#dd3d36;
+}
+
+#digest_items.postbox .inside #digest-add-item-form span.error-txt {
+	padding-left:10px;
+	color:#dd3d36;
+}
