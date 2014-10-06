@@ -29,7 +29,7 @@
 				
 				$.post(ajaxurl, data, function(response) {
 					// console.log(response);
-					$btn.text( btn_text ).removeAttr('disabled');
+					$btn.text( btn_text ).removeAttr('disabled').prev( '#item-url' ).val('');
 				});
 			} else {
 				$btn.next( '.error-txt' ).text( $btn.data('error-invalid') ).parent().addClass('error');
