@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Digests\n"
-"POT-Creation-Date: 2014-10-06 16:13+0100\n"
-"PO-Revision-Date: 2014-10-06 16:15+0100\n"
-"Last-Translator: Anthony Destenay <anthony.destenay@gmail.com>\n"
+"POT-Creation-Date: 2014-10-06 22:36+0100\n"
+"PO-Revision-Date: 2014-10-06 22:37+0100\n"
+"Last-Translator: MyCookDiary <contact@mycookdiary.com>\n"
 "Language-Team: Anthony Destenay <anthony.destenay@gmail.com>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.6.9\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -18,11 +18,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: inc/admin.class.php:33 inc/tpl/options.php:3
+#: inc/admin.class.php:34 inc/tpl/options.php:3
 msgid "Options for digests"
 msgstr "Options des résumés"
 
-#: inc/admin.class.php:33 inc/admin.class.php:46 inc/tpl/archive-digest.php:12
+#: inc/admin.class.php:34 inc/admin.class.php:46 inc/tpl/archive-digest.php:12
 msgid "Digests"
 msgstr "Résumés"
 
@@ -102,7 +102,7 @@ msgstr "Merci d'indiquer une adresse URL valide."
 msgid "Add"
 msgstr "Ajouter"
 
-#: inc/tpl/metabox-digest.php:49 inc/tpl/metabox-digest.php:75
+#: inc/tpl/metabox-digest.php:29 inc/tpl/metabox-digest.php:58
 msgid "Remove"
 msgstr "Supprimer"
 
@@ -118,3 +118,15 @@ msgstr ""
 #: inc/tpl/options.php:10
 msgid "API Key"
 msgstr "Clé API"
+
+#: inc/tpl/options.php:16
+msgid "Acknowledgments"
+msgstr "Remerciements"
+
+#: inc/tpl/options.php:17
+msgid ""
+"A great thanks to the nicest authors, without whom I couldn't reach the end "
+"of this first experience of creating WordPress plugin:"
+msgstr ""
+"Un grand merci à ces superbes auteur(e)s, sans qui je n'aurais pu aller au "
+"terme de cette expérience de création de premier plugin :"

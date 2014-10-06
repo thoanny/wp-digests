@@ -35,7 +35,6 @@ class WP_Digests_Admin {
 	}
 	
 	public function options_page(){
-		// http://blog.wphub.com/creating-simple-options-page/
 		include_once( plugin_dir_path( __FILE__ ) . 'tpl/options.php' );
 	}
 	
@@ -92,7 +91,6 @@ class WP_Digests_Admin {
 	}
 	
 	public function save_custom_post_type_metaboxes($post_id){
-		// src: https://gist.github.com/helenhousandi/1593065/download#
 		
 		if ( ! isset( $_POST['custom_post_type_metaboxes_nonce'] ) || ! wp_verify_nonce( $_POST['custom_post_type_metaboxes_nonce'], 'custom_post_type_metaboxes_nonce' ) )
 			return;
