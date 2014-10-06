@@ -2,6 +2,8 @@
 	'use strict';
 	
 	$(function() {
+
+		$('#digest_items #item-url').val('')
 	
 		$('#digest_items button#add-item').on('click', function(e){
 			e.preventDefault();
@@ -34,7 +36,22 @@
 					// console.log(res.provider_url);
 					// Copier le template et remplir les champs
 					
+					var row = $( '.empty-item.screen-reader-text' )
+									.clone()
+									.removeClass('empty-item screen-reader-text')
+									.addClass('digest-item')
+									.find('img.thumbnail').attr('src', res.thumbnail_url).end()
+									.find('input.thumbnail').val(res.thumbnail_url).end()
+									.find('input.provider-name').val(res.provider_name).end()
+									.find('input.provider-url').val(res.provider_url).end()
+									.find('input.type').val(res.type).end()
+									.find('input.url').val(res.url).end()
+									.find('input.title').val(res.title).end()
+									.find('textarea.description').val(res.description).end()
+									.appendTo('#digest-items-list');
+									
 					$btn.text( btn_text ).removeAttr('disabled').prev( '#item-url' ).val('');
+					return false;
 				});
 			} else {
 				$btn.next( '.error-txt' ).text( $btn.data('error-invalid') ).parent().addClass('error');
@@ -44,8 +61,12 @@
 		});
 		
 		$('#digest_items input#item-url').focus(function(){
-			console.log('focus');
 			$(this).next( 'button' ).next( '.error-txt' ).text( '' ).parent().removeClass('error');
+		});
+		
+		$('#digest_items .remove-item').on('click', function() {
+			$(this).parents('table').remove();
+			return false;
 		});
 	
 	});
