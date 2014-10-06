@@ -14,13 +14,14 @@ class WP_Digests_Admin {
 
 	public function enqueue_styles() {
 
-		wp_enqueue_style( $this->name, plugin_dir_url( __FILE__ ) . '../css/admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->name, plugin_dir_url( dirname(__FILE__) ) . 'css/admin.css', array(), $this->version, 'all' );
 
 	}
 
 	public function enqueue_scripts() {
 
-		wp_enqueue_script( $this->name, plugin_dir_url( __FILE__ ) . '../js/admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->name, plugin_dir_url( dirname(__FILE__) ) . 'js/admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( 'autosize', plugin_dir_url( dirname(__FILE__) ) . 'lib/autosize/jquery.autosize.min.js', array( 'jquery' ), $this->version, false );
 
 	}
 	

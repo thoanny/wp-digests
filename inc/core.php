@@ -80,7 +80,7 @@ class WP_Digests {
 	}
 	
 	public function Markdown($text) {
-		include_once( plugin_dir_path( __FILE__ ) . '../lib/Parsedown/Parsedown.php' );
+		include_once( plugin_dir_path( dirname(__FILE__) ) . 'lib/Parsedown/Parsedown.php' );
 		$Parsedown = new Parsedown();
 		
 		return $Parsedown->setBreaksEnabled(true)->text($text);
