@@ -68,6 +68,8 @@
 			$(this).parents('table').remove();
 			return false;
 		});
+		
+		$('#digest_items .digest-item textarea').autosize();
 	
 	});
 

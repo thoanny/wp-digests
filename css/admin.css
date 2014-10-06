@@ -37,6 +37,13 @@
 	resize: none;
 }
 
+#digest_items.postbox .inside #digest-items-list table tr td textarea {
+	vertical-align: top;
+	-webkit-transition: height 0.2s;
+	-moz-transition: height 0.2s;
+	transition: height 0.2s;
+}
+
 #digest_items.postbox .inside #digest-items-list table tr td img[src] {
 	max-width:100px;
 	height:auto;
