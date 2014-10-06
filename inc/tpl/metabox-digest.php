@@ -2,7 +2,7 @@
 <div id="digest-add-item-form">
 	<label for="item_url"><?php echo __('URL address'); ?>*</label>
 	<input id="item-url" type="text" name="item_url" placeholder="http://..." />
-	<button id="add-item" class="button" data-error-empty="<?php echo esc_attr__('URL Address is mandatory.', 'wp-digests'); ?>" data-error-invalid="<?php echo esc_attr__('You must enter a valid URL here.', 'wp-digests'); ?>"><?php echo __('Add', 'wp-digests'); ?></button>
+	<button id="add-item" class="button" data-loading="<?php echo esc_attr__('Loading...', 'wp-digests'); ?>" data-error-empty="<?php echo esc_attr__('URL Address is mandatory.', 'wp-digests'); ?>" data-error-invalid="<?php echo esc_attr__('You must enter a valid URL here.', 'wp-digests'); ?>"><?php echo __('Add', 'wp-digests'); ?></button>
 	<span class="error-txt"></span>
 </div>
 
