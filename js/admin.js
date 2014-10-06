@@ -27,8 +27,13 @@
 				
 				$btn.text( $btn.data( 'loading' ) ).attr('disabled', 'disabled');
 				
-				$.post(ajaxurl, data, function(response) {
-					// console.log(response);
+				$.post(ajaxurl, data, function(data) {
+				
+					var res = jQuery.parseJSON(data);
+				
+					// console.log(res.provider_url);
+					// Copier le template et remplir les champs
+					
 					$btn.text( btn_text ).removeAttr('disabled').prev( '#item-url' ).val('');
 				});
 			} else {

@@ -133,7 +133,8 @@ class WP_Digests_Admin {
 	}
 	
 	public function extract_data() {
-		echo $_POST;
+		$result = wp_remote_retrieve_body(wp_remote_get('http://api.embed.ly/1/extract?key='.get_option('wp_digests_embedly_api_key').'&url='.rawurldecode( $_POST['url'] )));		
+		echo $result;
 		die();
 	}
 
