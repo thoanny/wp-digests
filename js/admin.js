@@ -3,7 +3,7 @@
 	
 	$(function() {
 	
-		$('#digest_items button#item_extract_data').on('click', function(e){
+		$('#digest_items button#add-item').on('click', function(e){
 			e.preventDefault();
 			
 			var data = {
