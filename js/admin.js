@@ -6,9 +6,14 @@
 		$('#digest_items button#add-item').on('click', function(e){
 			e.preventDefault();
 			
+			var item_url = encodeURIComponent($('#digest_items input#item-url').val());
+			
+			if(item_url == '')
+				return false;
+				
 			var data = {
 				'action': 'extract_data',
-				'url': encodeURIComponent($('#digest_items input#item_url').val())
+				'url': item_url
 			}
 			
 			$.post(ajaxurl, data, function(response) {
