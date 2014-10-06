@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Digests\n"
-"POT-Creation-Date: 2014-10-02 17:46+0100\n"
-"PO-Revision-Date: 2014-10-02 17:52+0100\n"
+"POT-Creation-Date: 2014-10-06 14:14+0100\n"
+"PO-Revision-Date: 2014-10-06 14:18+0100\n"
 "Last-Translator: Anthony Destenay <anthony.destenay@gmail.com>\n"
 "Language-Team: Anthony Destenay <anthony.destenay@gmail.com>\n"
 "Language: fr_FR\n"
@@ -19,16 +19,18 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: inc/admin.class.php:30
+#, fuzzy
 msgctxt "Post Type General Name"
 msgid "Digests"
-msgstr ""
+msgstr "Résumés"
 
 #: inc/admin.class.php:31
+#, fuzzy
 msgctxt "Post Type Singular Name"
 msgid "Digest"
-msgstr ""
+msgstr "Afficher le résumé"
 
-#: inc/admin.class.php:32
+#: inc/admin.class.php:32 inc/tpl/archive-digest.php:12
 msgid "Digests"
 msgstr "Résumés"
 
@@ -71,3 +73,31 @@ msgstr "Aucun résultat"
 #: inc/admin.class.php:42
 msgid "Not found in Trash"
 msgstr "Aucun résultat dans la Corbeille."
+
+#: inc/admin.class.php:67
+msgid "Liens/Objets/..."
+msgstr ""
+
+#: inc/tpl/metabox-digest.php:3
+msgid "URL address"
+msgstr "Adresse URL"
+
+#: inc/tpl/metabox-digest.php:5
+msgid "Loading..."
+msgstr "Chargement..."
+
+#: inc/tpl/metabox-digest.php:5
+msgid "URL Address is mandatory."
+msgstr "L'adresse URL est obligatoire."
+
+#: inc/tpl/metabox-digest.php:5
+msgid "You must enter a valid URL here."
+msgstr "Merci d'indiquer une adresse URL valide."
+
+#: inc/tpl/metabox-digest.php:5
+msgid "Add"
+msgstr "Ajouter"
+
+#: inc/tpl/metabox-digest.php:49 inc/tpl/metabox-digest.php:75
+msgid "Remove"
+msgstr "Supprimer"
