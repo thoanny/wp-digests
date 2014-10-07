@@ -21,7 +21,7 @@
 							<td height="1">
 								<input type="text" class="title widefat" name="title[]" placeholder="Titre" value="<?php if($item['title'] != '') echo esc_attr( $item['title'] ); ?>" />
 								<input type="hidden" name="thumbnail[]" class="thumbnail" placeholder="Illustration" value="<?php if ($item['thumbnail'] != '') echo esc_attr( $item['thumbnail'] ); ?>" />
-								<input type="hidden" name="provider_name[]" class="provider-name" placeholder="Provider name" value="<?php if ($item['provider_name'] != '') echo esc_attr( $item['provider_url'] ); ?>" />
+								<input type="hidden" name="provider_name[]" class="provider-name" placeholder="Provider name" value="<?php if ($item['provider_name'] != '') echo esc_attr( $item['provider_name'] ); ?>" />
 								<input type="hidden" name="provider_url[]" class="provider-url" placeholder="Provider url" value="<?php if ($item['provider_url'] != '') echo esc_attr( $item['provider_url'] ); ?>" />
 								<input type="hidden" name="type[]" class="type" placeholder="type" value="<?php if ($item['type'] != '') echo esc_attr( $item['type'] ); ?>" />
 								<input type="hidden" name="url[]" class="url" value="<?php if ($item['url'] != '') echo esc_attr( $item['url'] ); ?>" />
