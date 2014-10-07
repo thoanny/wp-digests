@@ -20,7 +20,6 @@
 		<li><strong>Chris Ellison</strong> (@cjellison), <a href="http://blog.wphub.com/creating-simple-options-page/" target="_blank">Creating a Simple Options Page</a></li>
 		<li><strong>Helen Hou-Sandi</strong> (@helenhousandi), <a href="https://gist.github.com/helenhousandi/1593065" target="_blank">Repeating Custom Fields in a Metabox</a></li>
 		<li><strong>Tom McFarlin</strong> (@tommcfarlin), <a href="https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate" target="_blank">WordPress Plugin Boilerplate</a> (GPL2+)</li>
-		<li><strong>Jack Moore</strong> (@jacklmoore), <a href="https://github.com/jackmoore/autosize" target="_blank">Autosize</a> (MIT License)</li>
 		<li><strong>Emanuil Rusev</strong> (@erusev), <a href="https://github.com/erusev/parsedown" target="_blank">Parsedown</a></li>
 	</ul>
 </div>
