@@ -33,8 +33,6 @@
 				
 					var res = jQuery.parseJSON(data);
 					
-					console.log(res);
-					
 					if(res.type == 'error') {
 						$btn.next( '.error-txt' ).text( res.error_message ).parent().addClass('error');
 						$btn.text( btn_text ).removeAttr('disabled');
@@ -53,8 +51,7 @@
 								.find('input.type').val(res.type).end()
 								.find('input.url').val(res.url).end()
 								.find('input.title').val(res.title).end()
-								.find('textarea.description').val(res.description).autosize().end()
-								.find('textarea.comment').autosize().end()
+								.find('textarea.description').val(res.description).end()
 								.appendTo('#digest-items-list');
 										
 							$btn.text( btn_text ).removeAttr('disabled').prev( '#item-url' ).val('');
@@ -79,8 +76,6 @@
 			return false;
 		});
 		
-		$('#digest_items .digest-item textarea').autosize();
-	
 	});
 
 	$( window ).load(function() {

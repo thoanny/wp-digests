@@ -21,7 +21,6 @@ class WP_Digests_Admin {
 	public function enqueue_scripts() {
 
 		wp_enqueue_script( $this->name, plugin_dir_url( dirname(__FILE__) ) . 'js/admin.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( 'autosize', plugin_dir_url( dirname(__FILE__) ) . 'lib/autosize/jquery.autosize.min.js', array( 'jquery' ), $this->version, false );
 
 	}
 	
@@ -150,7 +149,26 @@ class WP_Digests_Admin {
 					if ( is_wp_error( $data ) ) {
 						$result = json_encode( array('type' => 'error', 'error_code' => '2', 'error_message' => __('404 Not Found', 'wp-digests') ) );
 					} else {
+					
+						require_once( plugin_dir_path( dirname(__FILE__) ) . 'lib/phpqrcode/qrlib.php');
+						
+						$upload_dir = wp_upload_dir();
+						
+						if (!is_dir( $upload_dir['basedir'].'/'.$this->name )) {
+							mkdir($upload_dir['basedir'].'/'.$this->name, 0777, true);
+						}
+						
 						$result = $data;
+						
+						$result_json = json_decode($result);
+						$result_url = $result_json->{'url'};
+						
+						$qrcode_img = $upload_dir['basedir'].'/'.$this->name.'/'.sha1($result_url).'.png';
+						
+						if(!file_exists($qrcode_img)) {
+							QRcode::png($result_url, $qrcode_img, QR_ECLEVEL_L, 4);
+						}
+						
 					}
 				}
 				
