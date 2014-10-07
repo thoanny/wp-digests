@@ -15,7 +15,7 @@
 				<table border="0" cellpadding="0" cellspacing="0" width="100%" class="digest-item">
 					<tbody>
 						<tr>
-							
+							<td rowspan="3" width="1" valign="top"><div class="handle dashicons dashicons-image-flip-vertical"></div></td>
 							<?php if ($item['thumbnail'] != '') echo '<td rowspan="3" width=1 valign="top"><img src="'.esc_attr( $item['thumbnail'] ).'" class="thumbnail" /></td>'; ?>
 							
 							<td height="1">
@@ -28,7 +28,9 @@
 								<input type="hidden" name="type[]" class="type" placeholder="type" value="<?php if ($item['type'] != '') echo esc_attr( $item['type'] ); ?>" />
 								<input type="hidden" name="url[]" class="url" value="<?php if ($item['url'] != '') echo esc_attr( $item['url'] ); ?>" />
 							</td>
-							<td rowspan="3" valign="top" width="1"><a class="button remove-item" href="#"><?php echo __('Remove'); ?></a></td>
+							<td rowspan="3" valign="top" width="1" align="right">
+								<a class="button remove-item" href="#"><span class="dashicons dashicons-trash"></span></a>
+							</td>
 						</tr>
 						<tr>
 							<td valign="top"><textarea type="text" class="widefat" name="description[]" placeholder="Description"><?php if($item['description'] != '') echo esc_attr( $item['description'] ); ?></textarea></td>
@@ -46,6 +48,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="empty-item screen-reader-text">
 	<tbody>
 		<tr>
+			<td rowspan="3" width="1" valign="top"><div class="handle dashicons dashicons-image-flip-vertical"></div></td>
 			<td rowspan="3" width=1 valign="top">
 				<img class="thumbnail" />
 			</td>
@@ -59,7 +62,9 @@
 				<input type="hidden" name="type[]" class="type" placeholder="type" />
 				<input type="hidden" name="url[]" class="url" value="" />
 			</td>
-			<td rowspan="3" valign="top" width="1"><a class="button remove-item" href="#"><?php echo __('Remove'); ?></a></td>
+			<td rowspan="3" valign="top" width="1" align="right">
+				<a class="button remove-item" href="#"><span class="dashicons dashicons-trash"></span></a>
+			</td>
 		</tr>
 		<tr>
 			<td valign="top"><textarea type="text" class="widefat description" name="description[]" placeholder="Description"></textarea></td>
@@ -71,3 +76,15 @@
 </table>
 
 </div> <!-- #digest-items-list -->
+
+<script>
+jQuery(document).ready(function($) {
+		$( "#digest-items-list" ).sortable({ 
+			items: "> table.digest-item",
+			handle: ".handle",
+			placeholder: "ui-state-highlight"
+		});
+		$( "#digest-items-list" ).disableSelection();
+});
+	
+</script>
