@@ -3,7 +3,7 @@
 	
 	$(function() {
 
-		$('#digest_items #item-url').val('')
+		$('#digest_items #item-url').val('');
 	
 		$('#digest_items button#add-item').on('click', function(e){
 			e.preventDefault();
@@ -32,26 +32,35 @@
 				$.post(ajaxurl, data, function(data) {
 				
 					var res = jQuery.parseJSON(data);
-				
-					// console.log(res.provider_url);
-					// Copier le template et remplir les champs
 					
-					var row = $( '.empty-item.screen-reader-text' )
-									.clone()
-									.removeClass('empty-item screen-reader-text')
-									.addClass('digest-item')
-									.find('img.thumbnail').attr('src', res.thumbnail_url).end()
-									.find('input.thumbnail').val(res.thumbnail_url).end()
-									.find('input.provider-name').val(res.provider_name).end()
-									.find('input.provider-url').val(res.provider_url).end()
-									.find('input.type').val(res.type).end()
-									.find('input.url').val(res.url).end()
-									.find('input.title').val(res.title).end()
-									.find('textarea.description').val(res.description).end()
-									.appendTo('#digest-items-list');
-									
-					$btn.text( btn_text ).removeAttr('disabled').prev( '#item-url' ).val('');
-					return false;
+					console.log(res);
+					
+					if(res.type == 'error') {
+						$btn.next( '.error-txt' ).text( res.error_message ).parent().addClass('error');
+						$btn.text( btn_text ).removeAttr('disabled');
+					} else {
+					
+						var row = $( '.empty-item.screen-reader-text' )
+								.clone()
+								.removeClass('empty-item screen-reader-text')
+								.addClass('digest-item')
+								.find('img.thumbnail').attr('src', res.thumbnail_url).end()
+								.find('input.thumbnail').val(res.thumbnail_url).end()
+								.find('input.thumbnail-width').val(res.thumbnail_width).end()
+								.find('input.thumbnail-height').val(res.thumbnail_height).end()
+								.find('input.provider-name').val(res.provider_name).end()
+								.find('input.provider-url').val(res.provider_url).end()
+								.find('input.type').val(res.type).end()
+								.find('input.url').val(res.url).end()
+								.find('input.title').val(res.title).end()
+								.find('textarea.description').val(res.description).end()
+								.appendTo('#digest-items-list');
+										
+							$btn.text( btn_text ).removeAttr('disabled').prev( '#item-url' ).val('');
+						return false;
+					
+					}
+					
 				});
 			} else {
 				$btn.next( '.error-txt' ).text( $btn.data('error-invalid') ).parent().addClass('error');

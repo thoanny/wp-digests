@@ -2,7 +2,7 @@
 <div id="digest-add-item-form">
 	<label for="item_url"><?php echo __('URL address', 'wp-digests'); ?>*</label>
 	<input id="item-url" type="text" name="item_url" placeholder="http://..." />
-	<button id="add-item" class="button" data-loading="<?php echo esc_attr__('Loading...', 'wp-digests'); ?>" data-error-empty="<?php echo esc_attr__('URL Address is mandatory.', 'wp-digests'); ?>" data-error-invalid="<?php echo esc_attr__('You must enter a valid URL here.', 'wp-digests'); ?>"><?php echo __('Add', 'wp-digests'); ?></button>
+	<button type="submit" id="add-item" class="button" data-loading="<?php echo esc_attr__('Loading...', 'wp-digests'); ?>" data-error-empty="<?php echo esc_attr__('URL Address is mandatory.', 'wp-digests'); ?>" data-error-invalid="<?php echo esc_attr__('You must enter a valid URL here.', 'wp-digests'); ?>"><?php echo __('Add', 'wp-digests'); ?></button>
 	<span class="error-txt"></span>
 </div>
 
@@ -21,6 +21,8 @@
 							<td height="1">
 								<input type="text" class="title widefat" name="title[]" placeholder="Titre" value="<?php if($item['title'] != '') echo esc_attr( $item['title'] ); ?>" />
 								<input type="hidden" name="thumbnail[]" class="thumbnail" placeholder="Illustration" value="<?php if ($item['thumbnail'] != '') echo esc_attr( $item['thumbnail'] ); ?>" />
+								<input type="hidden" name="thumbnail_width[]" class="thumbnail-width" value="<?php if ($item['thumbnail_width'] != '') echo esc_attr( $item['thumbnail_width'] ); ?>" />
+								<input type="hidden" name="thumbnail_height[]" class="thumbnail-height" value="<?php if ($item['thumbnail_height'] != '') echo esc_attr( $item['thumbnail_height'] ); ?>" />
 								<input type="hidden" name="provider_name[]" class="provider-name" placeholder="Provider name" value="<?php if ($item['provider_name'] != '') echo esc_attr( $item['provider_name'] ); ?>" />
 								<input type="hidden" name="provider_url[]" class="provider-url" placeholder="Provider url" value="<?php if ($item['provider_url'] != '') echo esc_attr( $item['provider_url'] ); ?>" />
 								<input type="hidden" name="type[]" class="type" placeholder="type" value="<?php if ($item['type'] != '') echo esc_attr( $item['type'] ); ?>" />
@@ -50,6 +52,8 @@
 			<td height="1">
 				<input type="text" class="title widefat" name="title[]" placeholder="Titre" />
 				<input type="hidden" name="thumbnail[]" class="thumbnail" placeholder="Illustration" />
+				<input type="hidden" name="thumbnail_width[]" class="thumbnail-width" />
+				<input type="hidden" name="thumbnail_height[]" class="thumbnail-height" />
 				<input type="hidden" name="provider_name[]" class="provider-name" placeholder="Provider name" />
 				<input type="hidden" name="provider_url[]" class="provider-url" placeholder="Provider url" />
 				<input type="hidden" name="type[]" class="type" placeholder="type" />

@@ -132,7 +132,37 @@ class WP_Digests_Admin {
 	}
 	
 	public function extract_data() {
-		$result = wp_remote_retrieve_body(wp_remote_get('http://api.embed.ly/1/oembed?key='.get_option('wp_digests_embedly_api_key').'&url='.rawurldecode( $_POST['url'] )));		
+		
+		
+		
+		if(isset( $_POST['url'] ) && !empty( $_POST['url'] )) {
+			$url = rawurldecode( $_POST['url'] );
+			
+			if(filter_var($url, FILTER_VALIDATE_URL)) {
+				
+				$response = wp_remote_get( 'http://api.embed.ly/1/oembed?key='.get_option('wp_digests_embedly_api_key').'&url='. $url );
+				
+				if ( is_wp_error( $response ) ) {
+					$result = json_encode( array('type'=>'error', 'error_code'=>'1','error_message' => __('404 Not Found', 'wp-digests') ) );
+				} else {
+					$data = wp_remote_retrieve_body( $response );
+					
+					if ( is_wp_error( $data ) ) {
+						$result = json_encode( array('type' => 'error', 'error_code' => '2', 'error_message' => __('404 Not Found', 'wp-digests') ) );
+					} else {
+						$result = $data;
+					}
+				}
+				
+				
+			} else {
+				$result = json_encode( array('type'=>'error', 'error_code'=>'3', 'error_message' => __('You must enter a valid URL here.', 'wp-digests') ) );
+			}
+			
+		} else {
+			$result = json_encode( array('type'=>'error', 'error_code'=>'4', 'error_message' => __('URL Address is mandatory.', 'wp-digests') ) );
+		}
+				
 		echo $result;
 		die();
 	}
