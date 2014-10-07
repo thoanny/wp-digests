@@ -53,7 +53,8 @@
 								.find('input.type').val(res.type).end()
 								.find('input.url').val(res.url).end()
 								.find('input.title').val(res.title).end()
-								.find('textarea.description').val(res.description).end()
+								.find('textarea.description').val(res.description).autosize().end()
+								.find('textarea.comment').autosize().end()
 								.appendTo('#digest-items-list');
 										
 							$btn.text( btn_text ).removeAttr('disabled').prev( '#item-url' ).val('');
