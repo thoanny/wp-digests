@@ -14,19 +14,23 @@ class WP_Digests_Admin {
 
 	public function enqueue_styles() {
 
+		wp_enqueue_style( 'wp-color-picker' ); 
 		wp_enqueue_style( $this->name, plugin_dir_url( dirname(__FILE__) ) . 'css/admin.css', array(), $this->version, 'all' );
 
 	}
 
 	public function enqueue_scripts() {
-
-		wp_enqueue_script( $this->name, plugin_dir_url( dirname(__FILE__) ) . 'js/admin.js', array( 'jquery' ), $this->version, false );
+		
+		wp_enqueue_script( $this->name, plugin_dir_url( dirname(__FILE__) ) . 'js/admin.js', array( 'jquery', 'wp-color-picker' ), $this->version, false );
 
 	}
 	
 	public function register_settings(){
 		add_option( 'wp_digests_embedly_api_key', '');
 		register_setting( 'default', 'wp_digests_embedly_api_key' );
+		// http://code.tutsplus.com/articles/how-to-use-wordpress-color-picker-api--wp-33067
+		add_option( 'wp_digests_item_background', '#eeeeee');
+		register_setting( 'default', 'wp_digests_item_background' );
 	}
 	
 	public function register_options_page(){

@@ -3,6 +3,15 @@
 	<h2><?php echo __('Options for digests', 'wp-digests'); ?></h2>
 	<form method="post" action="options.php"> 
 		<?php settings_fields( 'default' ); ?>
+		<h3>Affichage</h3>
+			<table class="form-table">
+				<tbody>
+					<tr>
+						<th scope="row">Couleur d'arrière-plan</th>
+						<td><input type="text" name="wp_digests_item_background" id="wp_digests_item_background" class="color-field" value="<?php echo get_option('wp_digests_item_background'); ?>" data-default-color="#eeeeee" /></td>
+					</tr>
+				</tbody>
+			</table>
 		<h3>Embed.ly</h3>
 			<p><?php printf( __( 'WP Digests uses %1$s from Embed.ly for extracting data informations from the added links in digests.', 'wp-digests' ), '<a href="http://embed.ly/docs/api/extract" target="_blank">Extract API</a>' ); ?></p>
 			<table class="form-table">

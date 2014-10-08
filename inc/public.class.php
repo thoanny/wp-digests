@@ -15,6 +15,9 @@ class WP_Digests_Public {
 	public function enqueue_styles() {
 
 		wp_enqueue_style( $this->name, plugin_dir_url( dirname(__FILE__) ) . 'css/public.css', array(), $this->version, 'all' );
+		
+		$custom_css .= '#digest .item{background: '.get_option('wp_digests_item_background').';}';
+        wp_add_inline_style( $this->name, $custom_css );
 
 	}
 

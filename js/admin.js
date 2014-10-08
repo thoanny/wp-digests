@@ -2,6 +2,8 @@
 	'use strict';
 	
 	$(function() {
+	
+		$('.color-field').wpColorPicker();
 
 		$('#digest_items #item-url').val('');
 	
