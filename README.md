@@ -7,3 +7,4 @@
 - Stopper l'envoi du formulaire depuis la metabox
 - Ajouter un bouton : 'rafraichir' pour rechercher un lien particulier
 - ajouter l'auteur de phpqrcode à la liste des remerciements
+- ajouter des otpions pour l'affichage public

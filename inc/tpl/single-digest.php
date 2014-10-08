@@ -14,20 +14,54 @@ get_header(); ?>
 					<header class="entry-header">
 						<h1 class="entry-title"><?php the_title(); ?></h1>
 					</header>
-					<div class="entry-content"><?php the_content(); ?></div>
-					<?php
-						$digest_items = get_post_meta( get_the_ID(), 'digest_items', true );
-						if(isset($digest_items) and !empty($digest_items))
-							foreach($digest_items as $item):
-								echo '<div class="digest-item '.$item['type'].'" style="border:1px solid red;margin:10px;">';
-								echo '<div class="item item__title"><h4><a href="'.$item['url'].'" target="_blank">'.$item['title'].'</a></h4></div>';
-								if(!empty($item['thumbnail'])) { echo '<div class="item item__thumbnail"><img src="'.$item['thumbnail'].'" /></div>'; }
-								echo '<div class="item item__description">'.$item['description'].'</div>';
-								echo '<div class="item item__provider"><a href="'.$item['provider_url'].'" target="_blank">'.$item['provider_name'].'</a></div>';
-								echo '</div>';
-								echo WP_Digests::Markdown($item['comment']);
-							endforeach;
-					?>
+					<div class="entry-content">
+						<?php the_content(); ?>
+						<div id="digest">
+						<?php
+							$digest_items = get_post_meta( get_the_ID(), 'digest_items', true );
+							if(isset($digest_items) and !empty($digest_items))
+								foreach($digest_items as $item):
+
+									$img_class = '';
+								
+									if ( isset( $content_width ) && !empty( $content_width ) ) {
+										if(!empty($item['thumbnail']) && !empty($item['thumbnail_width'])) {
+											
+											if( $item['thumbnail_width'] >= $content_width ) {
+												$img_class = ' xl';
+											} elseif( $item['thumbnail_width'] >= $content_width/4*3 ) {
+												$img_class = ' l';
+											} elseif( $item['thumbnail_width'] >= $content_width/2 ) {
+												$img_class = ' m';
+											} elseif( $item['thumbnail_width'] >= $content_width/4 ) {
+												$img_class = ' s';
+											} else {
+												$img_class = ' xs';
+											}
+											
+										}
+									}
+									echo '<div class="item '.$item['type'].'">';
+									if(!empty($item['thumbnail'])) { 
+										echo '<div class="thumbnail'.$img_class.'"><img src="'.$item['thumbnail'].'" /></div>'; 
+									}
+									echo '<div class="title"><h4><a href="'.$item['url'].'" target="_blank">'.$item['title'].'</a></h4></div>';
+									if(!empty($item['description'])) { 
+										echo '<div class="description">'.$item['description'].'</div>';
+									}
+									if(!empty($item['provider_name']) && !empty($item['provider_url'])) { 
+										echo '<div class="provider"><a href="'.$item['provider_url'].'" target="_blank">'.$item['provider_name'].'</a></div>';
+									} elseif(!empty($item['provider_url'])) {
+										echo '<div class="provider">'.$item['provider_name'].'</div>';
+									}
+									if(!empty($item['comment'])) { 
+										echo '<div class="comment">'.WP_Digests::Markdown($item['comment']).'</div>';
+									}
+									echo '</div>';
+								endforeach;
+						?>
+						</div>
+					</div>
 				</article>
 			<?php endwhile; ?>
 		</div>

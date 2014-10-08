@@ -102,6 +102,8 @@ class WP_Digests_Admin {
 		$new = array();
 		
 		$thumbnails = $_POST['thumbnail'];
+		$thumbnail_widths = $_POST['thumbnail_width'];
+		$thumbnail_heights = $_POST['thumbnail_height'];
 		$provider_names = $_POST['provider_name'];
 		$provider_urls = $_POST['provider_url'];
 		$types = $_POST['type'];
@@ -116,6 +118,8 @@ class WP_Digests_Admin {
 				$new[$i]['title'] = stripslashes( strip_tags( $titles[$i] ) );
 				$new[$i]['url'] = stripslashes( $urls[$i] );
 				$new[$i]['thumbnail'] = stripslashes( $thumbnails[$i] );
+				$new[$i]['thumbnail_width'] = stripslashes( $thumbnail_widths[$i] );
+				$new[$i]['thumbnail_height'] = stripslashes( $thumbnail_heights[$i] );
 				$new[$i]['provider_name'] = stripslashes( strip_tags( $provider_names[$i] ) );
 				$new[$i]['provider_url'] = stripslashes( $provider_urls[$i] );
 				$new[$i]['type'] = stripslashes( strip_tags( $types[$i] ) );
