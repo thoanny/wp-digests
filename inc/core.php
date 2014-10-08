@@ -86,5 +86,21 @@ class WP_Digests {
 		return $Parsedown->setBreaksEnabled(true)->text($text);
 		
 	}
+	
+	public function QRCode($url) {
+		
+		require_once( plugin_dir_path( dirname(__FILE__) ) . 'lib/phpqrcode/qrlib.php');
+		$upload_dir = wp_upload_dir();
+		
+		$qrcode_img = $upload_dir['basedir'].'/wp-digests/'.sha1($url).'.png';
+		if(file_exists($qrcode_img)) {
+			return '<img src="'.$upload_dir['baseurl'] .'/wp-digests/'. sha1($url) . '.png" />';
+		} else {
+			return $qrcode_img;
+		}
+		
+		
+		
+	}
 
 }

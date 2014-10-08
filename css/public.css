@@ -28,6 +28,10 @@
 	width:100%;
 }
 
+#digest .item .qrcode{
+	display:none;
+}
+
 #digest .item .thumbnail img {
 	width:100%;
 	height:auto;

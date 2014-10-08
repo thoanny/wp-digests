@@ -45,6 +45,7 @@ get_header(); ?>
 									if(!empty($item['thumbnail'])) { 
 										echo '<div class="thumbnail'.$img_class.'"><img src="'.$item['thumbnail'].'" /></div>'; 
 									}
+									echo '<div class="qrcode">'.WP_Digests::QRCode($item['url']).'</div>';
 									echo '<div class="title"><h4><a href="'.$item['url'].'" target="_blank">'.$item['title'].'</a></h4></div>';
 									if(!empty($item['description'])) { 
 										echo '<div class="description">'.$item['description'].'</div>';
