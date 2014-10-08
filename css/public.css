@@ -33,3 +33,29 @@
 	width:100%;
 	height:auto;
 }
+
+#digest .item .comment {
+	background:#fff;
+	margin:10px 10px 0;
+	padding:10px;
+}
+
+#digest .item .comment h1,
+#digest .item .comment h2,
+#digest .item .comment h3,
+#digest .item .comment h4,
+#digest .item .comment h5,
+#digest .item .comment h6,
+#digest .item .comment h7,
+#digest .item .comment h8,
+#digest .item .comment p {
+	margin:0 0 10px;
+}
+#digest .item .comment img {
+	margin:10px 0;
+	max-width:100%;
+	height:auto;
+}
+#digest .item .comment p:last-child {
+	margin-bottom:0;
+}
