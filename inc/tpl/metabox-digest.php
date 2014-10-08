@@ -16,7 +16,7 @@
 					<tbody>
 						<tr>
 							<td rowspan="3" width="1" valign="top"><div class="handle dashicons dashicons-image-flip-vertical"></div></td>
-							<?php if ($item['thumbnail'] != '') echo '<td rowspan="3" width=1 valign="top"><img src="'.esc_attr( $item['thumbnail'] ).'" class="thumbnail" /><a href="#" class="remove-image">'. __('Remove image').'</a></td>'; ?>
+							<?php if ($item['thumbnail'] != '') echo '<td rowspan="3" width=1 valign="top"><img src="'.esc_attr( $item['thumbnail'] ).'" class="thumbnail" /><a href="#" class="remove-image">'. __('Remove image', 'wp-digests').'</a></td>'; ?>
 							
 							<td height="1">
 								<input type="text" class="title widefat" name="title[]" placeholder="Titre" value="<?php if($item['title'] != '') echo esc_attr( $item['title'] ); ?>" />
@@ -33,10 +33,10 @@
 							</td>
 						</tr>
 						<tr>
-							<td valign="top"><textarea rows="3" type="text" class="widefat" name="description[]" placeholder="Description"><?php if($item['description'] != '') echo esc_attr( $item['description'] ); ?></textarea></td>
+							<td valign="top"><textarea rows="3" type="text" class="widefat" name="description[]" placeholder="<?php echo __('Description', 'wp-digests'); ?>"><?php if($item['description'] != '') echo esc_attr( $item['description'] ); ?></textarea></td>
 						</tr>
 						<tr>
-							<td valign="top"><textarea rows="3" type="text" class="widefat" name="comment[]" placeholder="Commentaire"><?php if($item['comment'] != '') echo esc_attr( $item['comment'] ); ?></textarea></td>
+							<td valign="top"><textarea rows="3" type="text" class="widefat" name="comment[]" placeholder="<?php echo __('Comment', 'wp-digests'); ?>"><?php if($item['comment'] != '') echo esc_attr( $item['comment'] ); ?></textarea></td>
 						</tr>
 					</tbody>
 				</table>
@@ -51,10 +51,10 @@
 			<td rowspan="3" width="1" valign="top"><div class="handle dashicons dashicons-image-flip-vertical"></div></td>
 			<td rowspan="3" width=1 valign="top">
 				<img class="thumbnail" />
-				<a href="#" class="remove-image"><?php echo __('Remove image'); ?></a>
+				<a href="#" class="remove-image"><?php echo __('Remove image', 'wp-digests'); ?></a>
 			</td>
 			<td height="1">
-				<input type="text" class="title widefat" name="title[]" placeholder="Titre" />
+				<input type="text" class="title widefat" name="title[]" placeholder="<?php echo __('Title', 'wp-digests'); ?>" />
 				<input type="hidden" name="thumbnail[]" class="thumbnail" />
 				<input type="hidden" name="thumbnail_width[]" class="thumbnail-width" />
 				<input type="hidden" name="thumbnail_height[]" class="thumbnail-height" />
@@ -68,10 +68,10 @@
 			</td>
 		</tr>
 		<tr>
-			<td valign="top"><textarea rows="3" type="text" class="widefat description" name="description[]" placeholder="Description"></textarea></td>
+			<td valign="top"><textarea rows="3" type="text" class="widefat description" name="description[]" placeholder="<?php echo __('Description', 'wp-digests'); ?>"></textarea></td>
 		</tr>
 		<tr>
-			<td valign="top"><textarea rows="3" type="text" class="widefat comment" name="comment[]" placeholder="Commentaire"></textarea></td>
+			<td valign="top"><textarea rows="3" type="text" class="widefat comment" name="comment[]" placeholder="<?php echo __('Comment', 'wp-digests'); ?>"></textarea></td>
 		</tr>
 	</tbody>
 </table>

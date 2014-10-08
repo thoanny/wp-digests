@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Digests\n"
-"POT-Creation-Date: 2014-10-06 22:36+0100\n"
-"PO-Revision-Date: 2014-10-06 22:37+0100\n"
+"POT-Creation-Date: 2014-10-08 23:25+0100\n"
+"PO-Revision-Date: 2014-10-08 23:27+0100\n"
 "Last-Translator: MyCookDiary <contact@mycookdiary.com>\n"
 "Language-Team: Anthony Destenay <anthony.destenay@gmail.com>\n"
 "Language: fr_FR\n"
@@ -18,69 +18,79 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: inc/admin.class.php:34 inc/tpl/options.php:3
+#: inc/admin.class.php:37 inc/tpl/options.php:3
 msgid "Options for digests"
 msgstr "Options des résumés"
 
-#: inc/admin.class.php:34 inc/admin.class.php:46 inc/tpl/archive-digest.php:12
+#: inc/admin.class.php:37 inc/admin.class.php:49 inc/tpl/archive-digest.php:12
 msgid "Digests"
 msgstr "Résumés"
 
-#: inc/admin.class.php:44
-#, fuzzy
+#: inc/admin.class.php:47
 msgctxt "Post Type General Name"
 msgid "Digests"
 msgstr "Résumés"
 
-#: inc/admin.class.php:45
-#, fuzzy
+#: inc/admin.class.php:48
 msgctxt "Post Type Singular Name"
 msgid "Digest"
-msgstr "Afficher le résumé"
+msgstr "Résumé"
 
-#: inc/admin.class.php:47
+#: inc/admin.class.php:50
 msgid "Parent:"
 msgstr "Parent :"
 
-#: inc/admin.class.php:48
+#: inc/admin.class.php:51
 msgid "All Digests"
 msgstr "Tous les résumés"
 
-#: inc/admin.class.php:49
+#: inc/admin.class.php:52
 msgid "View Digest"
 msgstr "Afficher le résumé"
 
-#: inc/admin.class.php:50
+#: inc/admin.class.php:53
 msgid "Add New Digest"
 msgstr "Ajouter un résumé"
 
-#: inc/admin.class.php:51
+#: inc/admin.class.php:54
 msgid "Add New"
 msgstr "Ajouter"
 
-#: inc/admin.class.php:52
+#: inc/admin.class.php:55
 msgid "Edit Digest"
 msgstr "Modifier le résumé"
 
-#: inc/admin.class.php:53
+#: inc/admin.class.php:56
 msgid "Update Digest"
 msgstr "Mettre à jour le résumé"
 
-#: inc/admin.class.php:54
+#: inc/admin.class.php:57
 msgid "Search Digest"
 msgstr "Chercher"
 
-#: inc/admin.class.php:55
+#: inc/admin.class.php:58
 msgid "Not found"
 msgstr "Aucun résultat"
 
-#: inc/admin.class.php:56
+#: inc/admin.class.php:59
 msgid "Not found in Trash"
 msgstr "Aucun résultat dans la Corbeille."
 
-#: inc/admin.class.php:81
-msgid "Liens/Objets/..."
-msgstr ""
+#: inc/admin.class.php:84
+msgid "Digest's links"
+msgstr "Liens du résumé"
+
+#: inc/admin.class.php:153 inc/admin.class.php:158
+msgid "404 Not Found"
+msgstr "Ressource non trouvée"
+
+#: inc/admin.class.php:185 inc/tpl/metabox-digest.php:5
+msgid "You must enter a valid URL here."
+msgstr "Merci d'indiquer une adresse URL valide."
+
+#: inc/admin.class.php:189 inc/tpl/metabox-digest.php:5
+msgid "URL Address is mandatory."
+msgstr "L'adresse URL est obligatoire."
 
 #: inc/tpl/metabox-digest.php:3
 msgid "URL address"
@@ -91,22 +101,26 @@ msgid "Loading..."
 msgstr "Chargement..."
 
 #: inc/tpl/metabox-digest.php:5
-msgid "URL Address is mandatory."
-msgstr "L'adresse URL est obligatoire."
-
-#: inc/tpl/metabox-digest.php:5
-msgid "You must enter a valid URL here."
-msgstr "Merci d'indiquer une adresse URL valide."
-
-#: inc/tpl/metabox-digest.php:5
 msgid "Add"
 msgstr "Ajouter"
 
-#: inc/tpl/metabox-digest.php:29 inc/tpl/metabox-digest.php:58
-msgid "Remove"
-msgstr "Supprimer"
+#: inc/tpl/metabox-digest.php:19 inc/tpl/metabox-digest.php:54
+msgid "Remove image"
+msgstr "Supprimer l'image"
 
-#: inc/tpl/options.php:7
+#: inc/tpl/metabox-digest.php:36 inc/tpl/metabox-digest.php:71
+msgid "Description"
+msgstr "Description"
+
+#: inc/tpl/metabox-digest.php:39 inc/tpl/metabox-digest.php:74
+msgid "Comment"
+msgstr "Commentaire"
+
+#: inc/tpl/metabox-digest.php:57
+msgid "Title"
+msgstr "Titre"
+
+#: inc/tpl/options.php:16
 #, php-format
 msgid ""
 "WP Digests uses %1$s from Embed.ly for extracting data informations from the "
@@ -115,15 +129,15 @@ msgstr ""
 "WP Digests utilise %1$s de Embed.ly pour extraire les informations des liens "
 "ajoutés aux résumés."
 
-#: inc/tpl/options.php:10
+#: inc/tpl/options.php:19
 msgid "API Key"
 msgstr "Clé API"
 
-#: inc/tpl/options.php:16
+#: inc/tpl/options.php:25
 msgid "Acknowledgments"
 msgstr "Remerciements"
 
-#: inc/tpl/options.php:17
+#: inc/tpl/options.php:26
 msgid ""
 "A great thanks to the nicest authors, without whom I couldn't reach the end "
 "of this first experience of creating WordPress plugin:"

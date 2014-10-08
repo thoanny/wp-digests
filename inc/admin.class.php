@@ -81,7 +81,7 @@ class WP_Digests_Admin {
 	}
 	
 	public function custom_post_type_metaboxes() {
-		add_meta_box('digest_items', __('Liens/Objets/...'), 'WP_Digests_Admin::custom_post_type_metaboxes_content', 'digest', 'normal', 'core');
+		add_meta_box('digest_items', __('Digest\'s links', 'wp-digests'), 'WP_Digests_Admin::custom_post_type_metaboxes_content', 'digest', 'normal', 'core');
 	}
 	
 	public function custom_post_type_metaboxes_content(){
