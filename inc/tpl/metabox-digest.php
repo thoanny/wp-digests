@@ -16,7 +16,7 @@
 					<tbody>
 						<tr>
 							<td rowspan="3" width="1" valign="top"><div class="handle dashicons dashicons-image-flip-vertical"></div></td>
-							<?php if ($item['thumbnail'] != '') echo '<td rowspan="3" width=1 valign="top"><img src="'.esc_attr( $item['thumbnail'] ).'" class="thumbnail" /></td>'; ?>
+							<?php if ($item['thumbnail'] != '') echo '<td rowspan="3" width=1 valign="top"><img src="'.esc_attr( $item['thumbnail'] ).'" class="thumbnail" /><a href="#" class="remove-image">'. __('Remove image').'</a></td>'; ?>
 							
 							<td height="1">
 								<input type="text" class="title widefat" name="title[]" placeholder="Titre" value="<?php if($item['title'] != '') echo esc_attr( $item['title'] ); ?>" />
@@ -51,6 +51,7 @@
 			<td rowspan="3" width="1" valign="top"><div class="handle dashicons dashicons-image-flip-vertical"></div></td>
 			<td rowspan="3" width=1 valign="top">
 				<img class="thumbnail" />
+				<a href="#" class="remove-image"><?php echo __('Remove image'); ?></a>
 			</td>
 			<td height="1">
 				<input type="text" class="title widefat" name="title[]" placeholder="Titre" />

@@ -40,7 +40,10 @@
 						$btn.text( btn_text ).removeAttr('disabled');
 					} else {
 					
-						var row = $( '.empty-item.screen-reader-text' )
+						console.log(res.thumbnail_url);
+					
+						if(res.thumbnail_url !== undefined) {
+							var row = $( '.empty-item.screen-reader-text' )
 								.clone()
 								.removeClass('empty-item screen-reader-text')
 								.addClass('digest-item')
@@ -55,6 +58,41 @@
 								.find('input.title').val(res.title).end()
 								.find('textarea.description').val(res.description).end()
 								.appendTo('#digest-items-list');
+						} else {
+							var row = $( '.empty-item.screen-reader-text' )
+								.clone()
+								.removeClass('empty-item screen-reader-text')
+								.addClass('digest-item')
+								.find('img.thumbnail').remove().end()
+								.find('input.thumbnail').remove().end()
+								.find('input.thumbnail-width').remove().end()
+								.find('input.thumbnail-height').remove().end()
+								.find('a.remove-image').remove().end()
+								.find('input.provider-name').val(res.provider_name).end()
+								.find('input.provider-url').val(res.provider_url).end()
+								.find('input.type').val(res.type).end()
+								.find('input.url').val(res.url).end()
+								.find('input.title').val(res.title).end()
+								.find('textarea.description').val(res.description).end()
+								.appendTo('#digest-items-list');
+						}
+						
+						$('#digest_items .remove-item').on('click', function() {
+							$(this).parents('table').remove();
+							return false;
+						});
+						
+						$('#digest_items .remove-image').on('click', function() {
+							$(this).prev('img').remove();
+							$(this).parents('table')
+								.find('input.thumbnail').remove().end()
+								.find('input.thumbnail-width').remove().end()
+								.find('input.thumbnail-height').remove().end();
+							$(this).remove();
+							return false;
+						});
+					
+						
 										
 							$btn.text( btn_text ).removeAttr('disabled').prev( '#item-url' ).val('');
 						return false;
@@ -75,6 +113,16 @@
 		
 		$('#digest_items .remove-item').on('click', function() {
 			$(this).parents('table').remove();
+			return false;
+		});
+		
+		$('#digest_items .remove-image').on('click', function() {
+			$(this).prev('img').remove();
+			$(this).parents('table')
+				.find('input.thumbnail').remove().end()
+				.find('input.thumbnail-width').remove().end()
+				.find('input.thumbnail-height').remove().end();
+			$(this).remove();
 			return false;
 		});
 		
